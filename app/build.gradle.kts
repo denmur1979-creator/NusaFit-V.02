@@ -8,15 +8,19 @@ if (file("google-services.json").exists()) {
     apply(plugin = "com.google.gms.google-services")
 }
 
+
 android {
-    namespace = "com.nusafit.app"
     compileSdk = 36
-    defaultConfig {
-        applicationId = "com.nusafit.app"
-        minSdk = 26
-        targetSdk = 35
-        versionCode = 1
-        versionName = "1.0.0"
+
+    // Konfigurasi lain yang sudah ada tetap dipertahankan
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = "17"
     }
 }
 
